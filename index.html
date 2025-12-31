@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo Profissional</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<header>
+  <h1>Gerador de Currículo Profissional</h1>
+</header>
+
+<div class="container">
+
+<!-- FORMULÁRIO -->
+<div class="formulario">
+  <h2>Preencha seus dados</h2>
+
+  <input id="nome" placeholder="Nome completo">
+  <input id="cargo" placeholder="Cargo / Profissão">
+
+  <input id="endereco" placeholder="Endereço">
+  <input id="telefone" placeholder="Telefone">
+  <input id="email" placeholder="Email">
+  <input id="site" placeholder="Site / LinkedIn">
+
+  <textarea id="perfil" placeholder="Resumo profissional"></textarea>
+
+  <textarea id="exp1" placeholder="Experiência profissional 1"></textarea>
+  <textarea id="exp2" placeholder="Experiência profissional 2"></textarea>
+
+  <textarea id="edu1" placeholder="Formação acadêmica 1"></textarea>
+  <textarea id="edu2" placeholder="Formação acadêmica 2"></textarea>
+
+  <input id="skills" placeholder="Habilidades (separadas por vírgula)">
+
+  <label>Foto</label>
+  <input type="file" id="foto" accept="image/*">
+
+  <button onclick="gerarPDF()">📥 Baixar Currículo em PDF</button>
+</div>
+
+<!-- CURRÍCULO -->
+<div id="curriculo" class="curriculo">
+
+  <!-- COLUNA ESQUERDA -->
+  <aside class="sidebar">
+    <img id="fotoPreview" class="foto">
+
+    <h1 id="nomePreview">SEU NOME</h1>
+    <h2 id="cargoPreview">SUA PROFISSÃO</h2>
+
+    <div class="bloco">
+      <h3>CONTATO</h3>
+      <p id="enderecoPreview"></p>
+      <p id="telefonePreview"></p>
+      <p id="emailPreview"></p>
+      <p id="sitePreview"></p>
+    </div>
+  </aside>
+
+  <!-- COLUNA DIREITA -->
+  <main class="conteudo">
+
+    <section>
+      <h3>PERFIL PROFISSIONAL</h3>
+      <p id="perfilPreview"></p>
+    </section>
+
+    <section>
+      <h3>EXPERIÊNCIA PROFISSIONAL</h3>
+      <p id="exp1Preview"></p>
+      <p id="exp2Preview"></p>
+    </section>
+
+    <section>
+      <h3>FORMAÇÃO ACADÊMICA</h3>
+      <p id="edu1Preview"></p>
+      <p id="edu2Preview"></p>
+    </section>
+
+    <section>
+      <h3>HABILIDADES E COMPETÊNCIAS</h3>
+      <div id="skillsPreview"></div>
+    </section>
+
+  </main>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
